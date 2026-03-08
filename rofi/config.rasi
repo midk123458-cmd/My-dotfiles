@@ -1,0 +1,14 @@
+
+//@theme "/usr/share/rofi/themes/Arc.rasi"
+
+//@theme "/home/hernan/.local/share/rofi/themes/launchpad.rasi"
+
+//@theme "/home/hernan/.local/share/rofi/themes/rounded-blue-dark.rasi"
+
+//@theme "/home/hernan/.local/share/rofi/themes/rounded-nord-dark.rasi"
+
+//@theme "/home/hernan/.local/share/rofi/themes/rounded-gray-dark.rasi"
+
+//@theme "/home/hernan/.local/share/rofi/themes/rounded-white.rasi"
+
+@theme "/home/hernan/.local/share/rofi/themes/rounded-nord-dark.rasi"
