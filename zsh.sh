@@ -13,7 +13,24 @@ otf-font-awesome pavucontrol pipewire pipewire-alsa pipewire-jack \
 pipewire-pulse ranger rofi rofimoji rust sudo swww ttf-noto-nerd \
 unzip vlc vlc-plugin-ffmpeg waybar wayland-utils waypaper which \
 wireplumber wl-clip-persist woff2-font-awesome xdg-desktop-portal-gtk \
-xdg-desktop-portal-hyprland xorg-server-xephyr zram-generator zsh
+xdg-desktop-portal-hyprland xorg-server-xephyr zram-generator zsh\
+amd-ucode apple-fonts awww base base-devel \
+blueman bluez bluez-utils booster brave-bin \
+chaotic-keyring chaotic-mirrorlist cliphist \
+cowsay debtap dhcpcd efibootmgr fastfetch firefox \
+gcc git gparted gst-libav gst-plugin-pipewire gst-plugins-bad \
+gst-plugins-base gst-plugins-good gst-plugins-ugly \
+hyprland hyprpaper hyprpolkitagent inter-font iwd \
+kitty kwallet kwallet-pam kwalletmanager lightdm lightdm-gtk-greeter \
+lightdm-gtk-greeter-settings linux linux-firmware linux-lts \
+linux-lts-headers mako mpv nano nautilus nautilus-admin-gtk4 neohtop \
+networkmanager nm-connection-editor otf-font-awesome pavucontrol pipewire \
+pipewire-alsa pipewire-jack pipewire-pulse ranger \
+rofi rofimoji rust sddm sudo ttf-noto-nerd unzip visual-studio-code-bin \
+vlc vlc-plugin-ffmpeg waybar wayland-utils waypaper which wireplumber \
+wl-clip-persist woff2-font-awesome xdg-desktop-portal-gtk xdg-desktop-portal-hyprland \
+xorg-server-xephyr xorg-xhost yay yay-debug zram-generator zsh \
+
 
 # 2. Instalación de Oh My Zsh (Modo desatendido para que el script siga)
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
