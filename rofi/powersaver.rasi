@@ -1,0 +1,56 @@
+* {
+    /* Variables de colores */
+    bg:          #1E1E2E;
+    bg-alt:      #313244;
+    fg:          #CDD6F4;
+    blue:        #89B4FA;
+    
+    background-color: transparent;
+    text-color:       @fg;
+    font:            "JetBrainsMono Nerd Font 12"; /* Asegúrate de tener una Nerd Font */
+}
+
+window {
+    background-color: @bg;
+    border:           2px;
+    border-color:     @blue;
+    border-radius:    12px;
+    width:            350px; /* Un poco más ancho para que respire */
+    location:         center;
+    anchor:           center;
+}
+
+mainbox {
+    background-color: @bg;
+    children:         [ listview ];
+    padding:          10px;
+}
+
+listview {
+    background-color: @bg;
+    lines:            5;
+    spacing:          10px; /* Más espacio entre los botones */
+    cycle:            true;
+    dynamic:          true;
+    scrollbar:        false;
+}
+
+element {
+    background-color: @bg-alt; /* Fondo ligeramente más claro para las opciones */
+    text-color:       @fg;
+    border-radius:    8px;
+    padding:          12px; /* Más padding = letras menos juntas */
+}
+
+element selected {
+    background-color: @blue;
+    text-color:       @bg;
+}
+
+element-text {
+    background-color: transparent;
+    text-color:       inherit;
+    vertical-align:   0.5;
+    horizontal-align: 0.0;
+    cursor:           pointer;
+}
