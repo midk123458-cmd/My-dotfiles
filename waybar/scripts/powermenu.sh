@@ -12,9 +12,8 @@ chosen=$(echo -e "$opc1\n$opc2\n$opc3\n$opc4\n$opc5" | rofi -dmenu -i -theme ~/.
 
 # Comparamos la variable
 case "$chosen" in
-    "$opc1") sudo shutdown -h now ;;
-    "$opc2") sudo reboot -f ;;
+    "$opc1") systemctl poweroff ;;
+    "$opc2") systemctl reboot ;;
     "$opc3") systemctl suspend ;;
     "$opc4") hyprctl dispatch exit ;;
-    *) exit 0 ;;
 esac
