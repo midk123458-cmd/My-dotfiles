@@ -58,6 +58,11 @@ sed -i 's/^ZSH_THEME=".*"/ZSH_THEME="bira"/' ~/.zshrc
 sed -i 's/^plugins=(git)/plugins=(git zsh-autosuggestions zsh-syntax-highlighting fast-syntax-highlighting zsh-autocomplete zsh-completions)/' ~/.zshrc
 source ~/.zshrc
 
+
+git clone https://github.com/lr-tech/rofi-themes-collection.git
+cd rofi-themes-collection
+cp -r themes/ /usr/share/rofi/themes/
+
 # Agrega inicio y fin
 if ! grep -q "beginning-of-line" ~/.zshrc; then
   cat << EOF >> ~/.zshrc
@@ -68,3 +73,4 @@ bindkey "\e[F" end-of-line
 EOF
 fi
 echo "Instalación completada. Recuerda añadir los plugins a tu .zshrc manualmente."
+
