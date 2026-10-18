@@ -3,23 +3,28 @@
   "position": "top",
   "margin-bottom": 2,
   "spacing" : 0,
+  "exclusive": true,
+
+
   "modules-left": [
   "custom/launcher",
   "hyprland/workspaces",
-  "custom/uptime",
   "cpu",
   "memory",
   ],
 
-  "modules-center": ["clock"],
+  "modules-center": [
+  "clock",
+  "custom/mpris"
+  ],
 
   "modules-right": [
-    "custom/pomodoro",
     "bluetooth",
     "network",
     "pulseaudio", 
     "backlight",
     "battery",
+    "custom/powermenu",
   ],
 
   "hyprland/workspaces": {
@@ -34,7 +39,7 @@
 
   "custom/launcher": {
     "format": "",
-    "on-click": "rofi -show drun",
+    "on-click": "rofi -show drun -show-icons -b",
     "tooltip": false
   },
 
@@ -52,16 +57,14 @@
     "tooltip-format-connected":"{device_enumerate}"
   },
 
-  "custom/music": {
-    "format": "  {}",
-    "escape": true,
-    "interval": 5,
-    "tooltip": false,
-    "exec": "playerctl metadata --format='{{ artist }} - {{ title }}'",
+  "custom/mpris": {
+    "format": "{}",
+    "return-type": "json",
+    "interval": 1,
     "on-click": "playerctl play-pause",
-    "max-length": 50,
-    "on-scroll-up": "pamixer -ui 2 && pamixer --get-volume > $SWAYSOCK.wob",
-    "on-scroll-down": "pamixer -ud 2 && pamixer --get-volume > $SWAYSOCK.wob"
+    "on-scroll-up": "playerctl next",
+    "on-scroll-down": "playerctl previous",
+    "exec": "/home/hernan/.config/waybar/scripts/mpris-icon.sh"
   },
 
   "clock": {
@@ -100,25 +103,27 @@
     "tooltip-format-disconnected": "Disconnected",
  },
 "cpu": {
-	"interval": 1,
-	"format": "{icon0}{icon1}{icon2}{icon3} {usage:>2}% ",
-	"format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
+    "interval": 1,
+    "format": "{usage}% {icon}",
+    "format-icons": [
+        "<span color='#69ff94'>▁</span>", 
+        "<span color='#2aa9ff'>▂</span>", 
+        "<span color='#f8f8f2'>▃</span>", 
+        "<span color='#f8f8f2'>▄</span>", 
+        "<span color='#ffffa5'>▅</span>", 
+        "<span color='#ffffa5'>▆</span>", 
+        "<span color='#ff9977'>▇</span>", 
+        "<span color='#dd532e'>█</span>"
+    ]
 },
 
   "memory": {
     "interval": 30,
-    "format": "  {used:0.1f}G/{total:0.1f}G",
+    "format": "  {used:0.1f}G/{total:0.1f}G",
     "tooltip-format": "Memory",
     "on-click": "neohtop"
  },
 
-  "custom/uptime": {
-    "format": "{}",
-    "format-icon": [""], 
-    "tooltip": false,
-    "interval": 1600,
-    "exec": "$HOME/.config/waybar/scripts/uptime.sh"
-  },
   
   "backlight": {
         "format": "{icon}  {percent}%",
@@ -128,9 +133,9 @@
   
   "pulseaudio": {
     "format": "{icon}  {volume}%",
-    "format-muted": "",
+    "format-muted": "",
     "format-icons": {
-      "default": ["", "", " "]
+      "default": ["", "", ""]
     },
     "on-click": "pavucontrol"
   },
@@ -158,12 +163,9 @@
   "format" : ""
   },
 
-  "custom/pomodoro": {
-	"format": "{}",
-	"return-type": "json",
-	"exec": "waybar-module-pomodoro --no-work-icons",
-	"on-click": "waybar-module-pomodoro toggle",
-	"on-click-right": "waybar-module-pomodoro reset",
+  "custom/powermenu": {
+    "format": "⏻",
+    "on-click": "~/.config/waybar/scripts/powermenu.sh"
   },
 
 }

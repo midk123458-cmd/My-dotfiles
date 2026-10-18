@@ -1,9 +1,11 @@
 {
   "layer": "top",
   "position": "top",
-  "margin-bottom": 2,
+  "margin-bottom": -15,
   "spacing" : 0,
   "exclusive": true,
+
+
   "modules-left": [
   "custom/launcher",
   "hyprland/workspaces",
@@ -12,7 +14,8 @@
   ],
 
   "modules-center": [
-  "clock"
+  "clock",
+  "custom/mpris"
   ],
 
   "modules-right": [
@@ -36,7 +39,7 @@
 
   "custom/launcher": {
     "format": "",
-    "on-click": "rofi -show drun",
+    "on-click": "rofi -show drun -show-icons -b",
     "tooltip": false
   },
 
@@ -54,16 +57,14 @@
     "tooltip-format-connected":"{device_enumerate}"
   },
 
-  "custom/music": {
-    "format": "  {}",
-    "escape": true,
-    "interval": 5,
-    "tooltip": false,
-    "exec": "playerctl metadata --format='{{ artist }} - {{ title }}'",
+  "custom/mpris": {
+    "format": "{}",
+    "return-type": "json",
+    "interval": 1,
     "on-click": "playerctl play-pause",
-    "max-length": 50,
-    "on-scroll-up": "pamixer -ui 2 && pamixer --get-volume > $SWAYSOCK.wob",
-    "on-scroll-down": "pamixer -ud 2 && pamixer --get-volume > $SWAYSOCK.wob"
+    "on-scroll-up": "playerctl next",
+    "on-scroll-down": "playerctl previous",
+    "exec": "/home/hernan/.config/waybar/scripts/mpris-icon.sh"
   },
 
   "clock": {
@@ -118,8 +119,7 @@
 
   "memory": {
     "interval": 30,
-    "format": "  {used:0.1f}G/{total:0.1f}G",
-    "tooltip-format": "Memory",
+    "format": "  {used:0.1f}G/{total:0.1f}G",
     "on-click": "neohtop"
  },
 
@@ -132,9 +132,9 @@
   
   "pulseaudio": {
     "format": "{icon}  {volume}%",
-    "format-muted": "",
+    "format-muted": "",
     "format-icons": {
-      "default": ["", "", " "]
+      "default": ["", "", ""]
     },
     "on-click": "pavucontrol"
   },
