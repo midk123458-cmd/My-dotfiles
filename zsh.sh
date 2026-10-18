@@ -55,7 +55,7 @@ sed -i 's/^ZSH_THEME=".*"/ZSH_THEME="bira"/' ~/.zshrc
 
 # 6. Activar los plugins en el archivo .zshrc
 # Esta línea busca la lista de plugins por defecto y añade los nuevos que instalaste
-sed -i 's/^plugins=(git)/plugins=(git zsh-autosuggestions zsh-syntax-highlighting fast-syntax-highlighting zsh-autocomplete zsh-completions)/' ~/.zshrc
+sed -i 's/^ plugins=(git zsh-autosuggestions zsh-syntax-highlighting zsh-autocomplete)/' ~/.zshrc
 source ~/.zshrc
 
 
